@@ -77,25 +77,25 @@ nav.forEach(function(option){
     if(tabActual === 'membership'){
       resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = membershipHTML;
-      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value = 'ui-tabs__tab ui-tabs__tab--selected';
     } else
 
     if(tabActual === 'programs'){
       resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = programsHTML;
-      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value = 'ui-tabs__tab ui-tabs__tab--selected';
     } else
 
     if(tabActual === 'screenings'){
       resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = screeningsHTML;
-      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value = 'ui-tabs__tab ui-tabs__tab--selected';
     } else
 
     if(tabActual === 'press'){
       resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = pressHTML;
-      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value = 'ui-tabs__tab ui-tabs__tab--selected';
     }
 
   })
