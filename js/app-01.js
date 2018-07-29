@@ -70,31 +70,45 @@ var nav = document.querySelectorAll('.ui-tabs__tabslist li');
 nav.forEach(function(option){
   option.addEventListener('click', function(event){
     var select = event.target;
-    console.log(select);
 
     //GET IMPORTANT VALUES
-    var claseActual = select.className;
     var tabActual = select.dataset.tab;
 
-    if(claseActual === 'ui-tabs__tab' && tabActual === 'membership'){
+    if(tabActual === 'membership'){
+      resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = membershipHTML;
-      select.classList.toggle('ui-tabs__tab ui-tabs__tab--selected');
-    } else 
-    if(claseActual === 'ui-tabs__tab' && tabActual === 'programs'){
+      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
+    } else
+
+    if(tabActual === 'programs'){
+      resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = programsHTML;
-      select.classList.toggle('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
     } else
-    if(claseActual === 'ui-tabs__tab' && tabActual === 'screenings'){
+
+    if(tabActual === 'screenings'){
+      resetClass();
       document.querySelector('.ui-tabs__content').innerHTML = screeningsHTML;
-      select.classList.toggle('ui-tabs__tab ui-tabs__tab--selected');
+      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
     } else
-    if(claseActual === 'ui-tabs__tab' && tabActual === 'press'){
-      document.querySelector('.ui-tabs__content').innerHTML = pressHTML
-      select.classList.toggle('ui-tabs__tab ui-tabs__tab--selected');
+
+    if(tabActual === 'press'){
+      resetClass();
+      document.querySelector('.ui-tabs__content').innerHTML = pressHTML;
+      select.classList.value('ui-tabs__tab ui-tabs__tab--selected');
     }
 
   })
 })
+
+function resetClass(){
+  var tabs = document.querySelectorAll('.ui-tabs__tabslist li');
+
+  tabs.forEach(function(tab){
+    tab.classList.value = 'ui-tabs__tab'
+  })
+}
+
 
 //TO SET THE CONTENT ON THE BODY
 document.querySelector('.ui-tabs__content').innerHTML = membershipHTML
